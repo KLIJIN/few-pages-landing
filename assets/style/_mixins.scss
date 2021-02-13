@@ -1,0 +1,7 @@
+@mixin breakpoint($br) {
+  //при ширине до указанной от 0 до max-width в @media (max-width: $br) сработает контент
+  //<-- параметры функции
+  @media (max-width: $br) {
+    @content; //<--- сюда будет идти весь контент который передаетяс в @include
+  }
+}

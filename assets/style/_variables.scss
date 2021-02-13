@@ -1,0 +1,18 @@
+$primary: #202020; //gray
+$secondary: #121212; //black
+$white: hsl(0, 0%, 100%);
+
+$sidebar-width: 300px;
+
+$z-index-wrapper: 100;
+$z-index-sidebar: 101;
+$z-index-header: 102;
+$z-index-modal: 110;
+//strories
+$z-index-preview: 1;
+$z-index-after: 2;
+$z-index-text: 3;
+
+//media запросы
+$tablet-bp: 991px;
+$mobile-bp: 700px;

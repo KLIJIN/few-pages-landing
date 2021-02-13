@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body class="show-sidebar">
+
+    <div class="page">
+
+        <header class="header">
+            <!-- шапка сайта Header -->
+            <div class="header__left">
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="./index.html"> Главная </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a class="nav__link has_subnav" href=""> Статьи </a>
+
+                            <ul class="subnav">
+                                <li> <a href="#">Создание сайтов</a></li>
+                                <li> <a href="#">Интернет-маркетинг</a></li>
+                                <li> <a href="#">Продвижение видео</a></li>
+                            </ul>
+
+                        </li>
+
+                        <li class="nav__item">
+                            <a class="nav__link" href=""> Обо Мне </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href=""> Реклама </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <button class="burger" type="button" id="sidebarToggle">
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+            </button>
+
+            <div class="header__right">
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="./profile.html"> Профиль</a>
+                            <!-- возможно динамически менять через js  -->
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href=""> Выйти</a>
+                        </li>
+                    </ul>
+                </nav>
+                <form class="search" action="./search.html" method="get">
+                    <!--   method="get" -->
+                    <input class="search__input" type="text" placeholder="сюда вводить текст">
+                </form>
+            </div>
+
+        </header>
+
+        <!-- сайдбар Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar__header"> <img src="./assets/images/sidebar1.jpg" alt="img"> </div>
+
+            <div class="sidebar__content">
+                <div class="propfile">
+                    <img src="./assets/images/deadpool.jpg" alt="">
+
+                    <div class="propfile__hero">
+                        <div class="propfile__name"> My Name </div>
+                        <div class="propfile__prof">блог front-end разработчика</div>
+                    </div>
+
+
+
+                    <ul class="social">
+                        <li class="social__item">
+                            <a class="social__link" href="#" target="_blank"> <img id="social__img"
+                                    src="./assets/images/vk 1.svg" alt="">
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link" href="#" target="_blank"> <img id="social__img"
+                                    src="./assets/images/instagram (1) 1.svg" alt=""> </a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link" href="#" target="_blank"> <img id="social__img"
+                                    src="./assets/images/512px-Telegram_logo.svg.webp" alt=""> </a>
+                        </li>
+                    </ul>
+
+                    <div class="propfile__text"> Начинающий Front-end разработчик.
+                        Созданием сайтов занимаюсь с 2020 года.
+                        Стек технологий: HTML, SCSS, JS, React, Redux
+                    </div>
+                </div> <!-- //s-profile -->
+                <nav class="nav  nav--mobile ">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="./index.html"> Главная </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a class="nav__link has_subnav" href=""> Статьи </a>
+
+                            <ul class="subnav">
+                                <li> <a href="#">Создание сайтов</a></li>
+                                <li> <a href="#">Интернет-маркетинг</a></li>
+                                <li> <a href="#">Продвижение видео</a></li>
+                            </ul>
+
+                        </li>
+
+                        <li class="nav__item">
+                            <a class="nav__link" href=""> Обо Мне </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href=""> Реклама </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> <!-- //sidebar__content -->
+
+            <div class="sidebar__footer">
+                <a class="btn btn--red" href="./works.html"> Мои Работы</a>
+                <button class="btn btn--blue" type="button" data-modal="contact-modal"> Написать Мне</button>
+            </div>
+
+        </aside>
+
+        <!--маин main -->
+        <main class="main ">
+            <div class="container">
+                <div class="post">
+                    <div class="post__actions">
+                        <a href="./index.html">Вернуться назад</a>
+                        <a href="#">
+                            поделиться
+                            <img src="./assets/images/share 1.svg" alt="">
+                        </a>
+
+                    </div>
+
+                    <div class="post__header">
+                        <h2 class="post__title margin-bottom-0"> Как я сходил на FrontEnd Conf 2021 </h2>
+                    </div>
+
+                    <div class="post__content">
+
+                        <div class="post__text">
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis
+                                urna. Et vestibulum, posuere
+                                tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce
+                                arcu sodales lacinia eu auctor
+                                nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat. Lorem ipsum dolor
+                                sit amet, consectetur
+                                adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor
+                                lacinia sit. Sagittis porttitor orci
+                                auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id.
+                                Diam sit sed volutpat massa.
+                                Egestas ornare vel volutpat.
+                            </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis
+                                urna. Et vestibulum, posuere
+                                tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce
+                                arcu sodales lacinia eu auctor
+                                nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.
+                            </p>
+
+                            <img class="post__image" src="./assets/images/post_image222.jpg" alt="postImage" />
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis
+                                urna. Et vestibulum, posuere
+                                tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce
+                                arcu sodales lacinia eu auctor
+                                nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat. Lorem ipsum dolor
+                                sit amet, consectetur
+                                adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor
+                                lacinia sit. Sagittis porttitor orci
+                                auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id.
+                                Diam sit sed volutpat massa.
+                                Egestas ornare vel volutpat.</p>
+
+                        </div> <!-- // post__text -->
+
+                    </div> <!-- // post__content -->
+
+
+                </div>
+
+            </div>
+
+    </div>
+    </main> <!-- // main -->
+
+
+    </div> <!-- // page -->
+
+    <div class="modal">
+        <!-- modal content -->
+        <div class="modal__content">
+
+            <form class="form form--auth" action="/" method="post">
+                <div class="form__group form--md">
+                    <input class="form__control" type="text" placeholder="Ваше Имя" value="">
+                    <span class="form__line"></span>
+                </div>
+
+                <div class="form__group form--md">
+                    <input class="form__control" type="text" placeholder="Ваш email" value="">
+                    <span class="form__line"></span>
+                </div>
+
+                <div class="form__group form--md">
+                    <input class="form__control" type="text" placeholder="Текст сообщения" value="">
+                    <span class="form__line"></span>
+                </div>
+
+                <div class="form__footer">
+                    <button type="submit" class="btn btn--blue btn--work"> Отправить </button>
+                </div>
+            </form>
+
+            <button class="modal__close btn--close" type="button"> <img src="./assets/images/cancel.svg"
+                    alt="cancel"></button>
+
+            <div class="modal__footer">
+                e-mail:<a href="mailto:info@mywebsite.ru"> info@mywebsite.ru</a>
+                тел:<a href="tel:+794323285622">+943-232-856-22</a>
+            </div>
+
+        </div> <!-- // modal__content -->
+    </div> <!-- // modal -->
+
+    <div class=" ShareModal">
+        <!-- ShareModal -->
+        <div class="ShareModal__content">
+
+            <button class="modal__close btn--close" type="button"> <img src="./assets/images/cancel.svg"
+                    alt="cancel"></button>
+
+            <div class="ShareModal__socialIcons">
+                <a class="ShareModal__socialIcon href=" #"> <img src="./assets/images/facebook cocial.svg" alt=""> </a>
+                <a class="ShareModal__socialIcon href=" #"> <img src="./assets/images/twitter cocial.svg" alt=""> </a>
+                <a class="ShareModal__socialIcon href=" #"> <img src="./assets/images/vk cocial.svg" alt=""> </a>
+                <a class="ShareModal__socialIcon href=" #"> <img src="./assets/images/copy 1.svg" alt=""> </a>
+
+            </div>
+
+        </div>
+    </div> <!-- // ShareModal -->
+
+
+
+    <script src="./assets/js/app.js"> </script>
+</body>
+
+</html>

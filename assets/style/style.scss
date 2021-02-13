@@ -1,0 +1,19 @@
+@import "reset"; //обнуление стилей
+@import "variables"; //переменные
+@import "mixins";
+@import "globals"; //глобальные стили
+
+@import "form";
+@import "modal";
+
+//блоки
+@import "header";
+@import "sidebar";
+
+@import "main";
+@import "stories";
+@import "addpost";
+@import "post";
+@import "related";
+@import "work";
+@import "cabinet";

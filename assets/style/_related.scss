@@ -1,0 +1,46 @@
+.related {
+  padding: 3rem 0.5rem; //внутренние отступы
+  border-bottom: 1px solid #1c1c1c;
+
+  &__title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    color: $white;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include breakpoint($mobile-bp) {
+      flex-direction: column;
+    }
+
+    &-item {
+      width: 50%;
+      margin-bottom: 2.5rem;
+      @include breakpoint($mobile-bp) {
+        width: 100%;
+      }
+    }
+
+    &-title {
+      text-overflow: ellipsis; //показывает точки при скрытии контента
+      overflow: hidden;
+      white-space: nowrap; //запрет переноса на новую строку
+      a {
+        font-size: 1.4rem;
+        font-weight: 500;
+
+        color: #f3eba2;
+      }
+    }
+
+    &-date {
+      font-size: 1.2rem;
+      color: #828282;
+    }
+  }
+}

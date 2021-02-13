@@ -1,0 +1,9 @@
+.main {
+  padding: 10rem 0 8rem $sidebar-width;
+
+  @include breakpoint($tablet-bp) {
+    //при ширине до  указанной в  @media (max-width: $br) сработает контент
+    //<-- параметры функции
+    padding-left: 0; //контент который уйдет в  @content
+  }
+}

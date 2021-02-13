@@ -1,0 +1,143 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index-sidebar;
+  width: $sidebar-width;
+  height: 100vh;
+
+  background-color: $primary; //временная заплатка
+  box-shadow: 5px 0 15px rgba(#050505, 0.1);
+  transform: translateX(0);
+
+  @include breakpoint($mobile-bp) {
+    overflow: scroll;
+  }
+
+  @include breakpoint($tablet-bp) {
+    //в мобильном режиме при появлении шторки скрываем остальной контент
+
+    top: 4rem;
+    height: calc(100vh - 4rem);
+    transform: translateX(-100%); //от нуля до 990пк сайд бар свернут
+    transition: all 0.2s linear;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+
+    .show-sidebar & {
+      //ДОП УСЛОВИЕ добавляется второе условие. Если от 0 до 990 и есть класс у бади
+      transform: translateX(0);
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__header {
+    height: 18rem;
+    background-color: purple; //временная заплатка
+
+    img {
+      height: 100%;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    @include breakpoint($tablet-bp) {
+      height: 14rem;
+    }
+  }
+
+  &__content {
+    @include breakpoint($tablet-bp) {
+      padding: 0 2rem; //Отступ слева и справа по 2 рема
+      flex-grow: 1;
+
+      // max-height: 40rem;
+    }
+
+    .propfile {
+      margin-top: -5rem;
+      @include breakpoint($tablet-bp) {
+        margin-top: -1.625rem;
+        position: relative;
+      }
+
+      img {
+        margin: 0 auto; //выравнивание по центру
+        margin-bottom: 2rem;
+
+        display: block;
+        position: relative; //баг с исчезновением рамки
+        width: 10rem;
+        height: 10rem;
+        border: 2px solid $white;
+        border-radius: 50%;
+        box-shadow: 0 7px 20px rgba(rgb(0, 0, 0), 0.1);
+
+        @include breakpoint($tablet-bp) {
+          width: 6.5rem;
+          height: 6.5rem;
+          margin-left: 0;
+          position: absolute;
+          left: 0;
+        }
+      }
+
+      &__hero {
+        margin-bottom: 2rem;
+        text-align: center;
+        @include breakpoint($tablet-bp) {
+          padding-top: 2.5rem;
+          text-align: left;
+          padding-left: 8rem;
+        }
+      }
+
+      &__name {
+        font-size: 1.8rem;
+        color: $white;
+
+        @include breakpoint($tablet-bp) {
+          font-size: 1.5rem;
+        }
+      }
+
+      &__prof {
+        font-size: 1.4rem;
+        font-weight: 300;
+        color: #dedede;
+
+        @include breakpoint($tablet-bp) {
+          font-size: 1.2rem;
+        }
+      }
+
+      &__text {
+        @include breakpoint($tablet-bp) {
+          display: none;
+        }
+
+        padding: 3rem 0;
+        margin: 3rem 0;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        text-align: center;
+        color: #ffffff;
+
+        border-top: 1px solid #1c1c1c;
+        border-bottom: 1px solid #1c1c1c;
+      }
+    }
+  }
+
+  &__footer {
+    @include breakpoint($tablet-bp) {
+    }
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2.5rem;
+    padding-right: 1.5rem;
+  }
+}

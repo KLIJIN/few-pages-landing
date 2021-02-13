@@ -1,0 +1,230 @@
+.header {
+  background-color: #0d0d0d;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: $z-index-header;
+  height: 4rem;
+  width: calc(100% - #{$sidebar-width});
+  box-shadow: 0 0 2.2rem rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoint($tablet-bp) {
+    width: 100%;
+  }
+
+  &__left {
+    width: 60%;
+    @include breakpoint($tablet-bp) {
+      width: 40%;
+    }
+  }
+
+  &__right {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    @include breakpoint($tablet-bp) {
+      width: 60%;
+    }
+  }
+}
+
+.nav {
+  @include breakpoint($tablet-bp) {
+    //  при разрешении менее 700пк навигация впринципе скрывается $mobile-bp: 700px;
+    display: none;
+  }
+
+  &--mobile {
+    display: none;
+    @include breakpoint($tablet-bp) {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    height: 4rem;
+    @include breakpoint($tablet-bp) {
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+
+    &:hover {
+      .nav__link {
+        background-color: #3137c9;
+        @include breakpoint($tablet-bp) {
+          background-color: transparent;
+        }
+      }
+      > .subnav {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    height: 4rem;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: $white;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 1rem 1rem;
+    transition: all 0.2s linear;
+    @include breakpoint($tablet-bp) {
+      font-size: 1.6rem;
+      display: inline-block;
+    }
+    &.has_subnav {
+      position: relative;
+      padding-right: 2.7rem;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 40%;
+        right: 1rem;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 5px 0 5px;
+        border-color: $white transparent transparent transparent;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.subnav {
+  display: none;
+  position: absolute; //для того что бы сабнав не раздвигал навигацию меню
+  top: 100%;
+  left: 0;
+
+  width: 16.5rem;
+  background-color: #3137c9;
+  padding: 12px 37px 0 0;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 6px 8px rgba(rgb(0, 0, 0), 0.2);
+  overflow: hidden;
+
+  @include breakpoint($tablet-bp) {
+    position: static;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: none;
+    padding-left: 1rem;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    width: 16.5rem;
+    border: none;
+    cursor: pointer;
+    color: $white;
+    font-size: 1.2rem;
+    padding-left: 1.2rem;
+    padding-bottom: 1.2rem;
+    @include breakpoint($tablet-bp) {
+      font-size: 1.5rem;
+      padding-left: 2rem;
+      padding-right: 0;
+      background-color: transparent;
+    }
+
+    &:hover {
+      background-color: darken(#3137c9, 10%);
+      @include breakpoint($tablet-bp) {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.search {
+  background-color: $primary;
+  max-width: 21rem;
+  width: 100%;
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 1.2rem;
+    color: $white;
+    &::placeholder {
+      color: rgba($white, 0.4);
+    }
+
+    @include breakpoint($tablet-bp) {
+      font-size: 1.6rem;
+      padding: 1rem 2rem;
+      height: 4rem;
+    }
+  }
+}
+
+.burger {
+  display: none;
+  width: 30px;
+
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  padding: 0;
+  transform: translateY(-50%);
+  &__span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $white;
+    transition: transform 0.2s linear;
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+
+  @include breakpoint($tablet-bp) {
+    display: block;
+  }
+
+  &.open {
+    > span:first-child {
+      transform: rotate(-45deg) translateX(-6px); //translateY(5px)
+    }
+    > span:nth-child(2) {
+      display: none; // opacity: 0;
+    }
+    > span:last-child {
+      transform: rotate(45deg) translateX(-6px); //translateY(-5px)
+    }
+  }
+}
